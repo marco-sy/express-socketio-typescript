@@ -44,9 +44,7 @@
       }
 
       #messages {
-        position: sticky;
         list-style-type: none;
-        top: 0;
         margin: 0;
         padding: 0;
       }
@@ -78,7 +76,7 @@
           item.style.textAlign = "right";
           item.style.backgroundColor = "#efefef";
           messages.appendChild(item);
-          window.scrollTo(0, 0);
+          window.scrollTo(0, document.body.scrollHeight);
           socket.emit("chat message", input.value);
           input.value = "";
         }
@@ -88,7 +86,7 @@
         const item = document.createElement("li");
         item.textContent = msg;
         messages.appendChild(item);
-        window.scrollTo(0, 0);
+        window.scrollTo(0, document.body.scrollHeight);
       });
     </script>
   </body>
